@@ -1,5 +1,22 @@
 # Hammerspoon × Yabai config
 
+## Index
+
+- Why
+- Contents
+    - `.yabairc`
+    - `.hammerspoon/init.lua`
+    - `.hammerspoon/windowAction.lua`
+- How to use it
+    - Directions and actions
+    - Space layout
+    - Insert rule
+    - Move mouse to display
+    - Move window to display
+    - Resize mode
+    - Debug
+    - Windows actions
+
 My personal workspace configuration I use at work.
 
 ## Why?
@@ -60,6 +77,10 @@ My hammerspoon main config file. Originaly it was a huge file but I started frag
 
 All of my shortcuts are triggered with my super key, wich is binded to `⌃⌥` _(control + alt)_. You can change it at the top level of my file in the global variable `super`.
 
+### `.hammerspoon/windowAction.lua`
+
+This is some nice reusable code I made for windows actions. There’s a dedicated section below that explains the use of them.
+
 ## How to use it?
 
 I’m glad you ask. Here is how I use it. For simplicity I’ll refer to the `QWERTY` layout keys.
@@ -108,3 +129,9 @@ You first use a direction to select horizontal/vertical edge, then all other dir
 ### Debug
 
 This is just for testing purpose. The keystoke `super` + `§` will print the current window details in the console.
+
+### Windows actions
+
+Those are actions that applies to two windows, like swaping, stacking and warping. You first launch the action to select the first window to apply the action, then change focus to the second window, and finally you call that action again to execute the windows action. To quickly explain with an example:
+
+> To swap two windows, you press `super` + `y` to engage swapping, then move your focus to another window with the directions, then you hit `super` + `y` again to effectively swap those two windows.
